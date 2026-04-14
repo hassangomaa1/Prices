@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Trend Live | ترند لايف</title>
+    <meta name="description" content="اسعار الذهب عيار ٢١ عيار ١٨ عيار ٢٤ سعر الدولار الان سعر اليورو.">
+  <meta name="keywords" content="اسعار الذهب, trend live, ترند لايف, HTML5, CSS3, JavaScript, Tailwind CSS, Bootstrap, UI UX, Portfolio, Egypt, Tanta, Certificates, Projects, مطور واجهات أمامية, حسن جمعة">
+  <meta name="author" content="ترند لايف">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#04070d">
+
+  <link rel="canonical" href="file_1908221183">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+
+  <!-- Google Fonts + Cairo (Arabic) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (Free Icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at 10% 20%, #000000, #121212);
+      font-family: 'Inter', 'Cairo', sans-serif;
+      color: #EFF3F8;
+      line-height: 1.5;
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      direction: rtl;
+    }
+
+    /* smooth glassmorphism container */
+    .app-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* header area with modern blend */
+    .hero-section {
+      margin-bottom: 3rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(46, 204, 113, 0.15);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(46, 204, 113, 0.35);
+      padding: 0.4rem 1.2rem;
+      border-radius: 60px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      margin-bottom: 1.2rem;
+      color: #A3E4C0;
+    }
+
+    .badge-live i {
+      font-size: 0.7rem;
+      color: #2ecc71;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.4; transform: scale(0.9);}
+      100% { opacity: 1; transform: scale(1.2);}
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #FFFFFF, #C0E0FF);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: white;
+      letter-spacing: -0.3px;
+      margin-bottom: 0.5rem;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #9AAEBF;
+      max-width: 550px;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    /* stats grid */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      margin: 2rem 0 2.5rem;
+    }
+
+    /* modern card design */
+    .metric-card {
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      border: 1px solid rgba(72, 98, 112, 0.4);
+      padding: 1.6rem 1.5rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+   
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .icon-bg {
+      width: 48px;
+      height: 48px;
+      background: rgba(20, 35, 45, 0.8);
+      border-radius: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: #EBCB8B;
+      transition: 0.2s;
+    }
+
+    .gold-icon .icon-bg i {
+      color: #F3C26F;
+      text-shadow: 0 0 6px rgba(243, 194, 111, 0.4);
+    }
+
+    .currency-icon .icon-bg i {
+      color: #6EC8E0;
+    }
+
+    .card-header h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+    }
+
+    .price-value {
+      font-size: 2.3rem;
+      font-weight: 700;
+      margin: 0.5rem 0 0.25rem;
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .price-number {
+      font-family: 'Inter', monospace;
+      letter-spacing: -0.5px;
+      background: linear-gradient(120deg, #F8F9FC, #E2ECF5);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .currency-symbol {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #AAC7DB;
+    }
+
+    .price-sub {
+      font-size: 0.75rem;
+      color: #8AA0B0;
+      margin-top: 6px;
+      border-top: 1px dashed rgba(100, 130, 150, 0.3);
+      display: inline-block;
+      padding-top: 6px;
+    }
+
+    .gold-highlight {
+      position: relative;
+    }
+
+    .gold-highlight .price-number {
+      background: linear-gradient(135deg, #F9E0A0, #E4B363);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    /* update footer */
+    .footer-stats {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      padding: 1rem 0.5rem;
+      border-top: 1px solid rgba(72, 98, 112, 0.3);
+    }
+
+    .timestamp {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 0.4rem 1rem;
+      border-radius: 32px;
+      backdrop-filter: blur(4px);
+    }
+
+    .timestamp i {
+      font-size: 0.75rem;
+      opacity: 0.8;
+    }
+
+    .auto-refresh {
+      font-size: 0.75rem;
+      color: #9aaebf;
+      background: rgba(30, 45, 55, 0.5);
+      padding: 0.3rem 0.9rem;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* shimmer / loading effect */
+    .loading-shimmer {
+      background: linear-gradient(110deg, rgba(70, 90, 100, 0.2) 8%, rgba(100, 120, 135, 0.3) 18%, rgba(70, 90, 100, 0.2) 33%);
+      background-size: 200% 100%;
+      animation: shimmer 1.2s linear infinite;
+      border-radius: 12px;
+      width: 140px;
+      height: 36px;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    /* responsive adjustments */
+    @media (max-width: 640px) {
+      body {
+        padding: 1.2rem;
+      }
+      h1 {
+        font-size: 1.9rem;
+      }
+      .price-value {
+        font-size: 1.8rem;
+      }
+      .metric-card {
+        padding: 1.2rem;
+      }
+    }
+
+    /* tooltip / extra style for EGY */
+    .attribution {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.7rem;
+      opacity: 0.5;
+    }
+    .name-front{
+        text-align:center;
+        color:#00E676;
+        font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div class="app-wrapper">
+  <div class="hero-section">
+    <div class="badge-live">
+      <i class="fas fa-circle"></i>
+      <span>مباشر | تحديث تلقائي</span>
+    </div>
+    <h1>Trend Live</h1>
+    <div class="subhead">
+      <i class="fas fa-chart-line" style="margin-left: 6px;"></i> أسعار الذهب عيارات مختلفة وسعر صرف الدولار مقابل الجنيه المصري
+    </div>
+  </div>
+
+  <div class="dashboard-grid">
+    <!-- Card: USD/EGP -->
+    <div class="metric-card currency-icon">
+      <div class="card-header">
+        <div class="icon-bg"><i class="fas fa-dollar-sign"></i></div>
+        <h3>الدولار الأمريكي</h3>
+      </div>
+      <div class="price-value">
+        <span class="price-number" id="usdValue">—</span>
+        <span class="currency-symbol">جنيه مصري</span>
+      </div>
+      <div class="price-sub"><i class="fas fa-exchange-alt"></i> السعر الرسمي</div>
+    </div>
+
+    <!-- Card: Gold 24k -->
+    <div class="metric-card gold-highlight">
+      <div class="card-header">
+        <div class="icon-bg"><i class="fas fa-coins"></i></div>
+        <h3>ذهب عيار 24</h3>
+      </div>
+      <div class="price-value">
+        <span class="price-number" id="gold24Value">—</span>
+        <span class="currency-symbol">جنيه / جرام</span>
+      </div>
+      <div class="price-sub"><i class="fas fa-gem"></i> النقاء الأعلى</div>
+    </div>
+
+    <!-- Card: Gold 21k (most popular) -->
+    <div class="metric-card gold-highlight">
+      <div class="card-header">
+        <div class="icon-bg"><i class="fas fa-ring"></i></div>
+        <h3>ذهب عيار 21</h3>
+      </div>
+      <div class="price-value">
+        <span class="price-number" id="gold21Value">—</span>
+        <span class="currency-symbol">جنيه / جرام</span>
+      </div>
+      <div class="price-sub"><i class="fas fa-chart-simple"></i> الأكثر تداولاً</div>
+    </div>
+
+    <!-- Card: Gold 18k -->
+    <div class="metric-card gold-highlight">
+      <div class="card-header">
+        <div class="icon-bg"><i class="fas fa-crown"></i></div>
+        <h3>ذهب عيار 18</h3>
+      </div>
+      <div class="price-value">
+        <span class="price-number" id="gold18Value">—</span>
+        <span class="currency-symbol">جنيه / جرام</span>
+      </div>
+      <div class="price-sub"><i class="far fa-clock"></i> مثالي للمجوهرات</div>
+    </div>
+  </div>
+
+  <div class="footer-stats">
+    <div class="timestamp" id="timestampBox">
+      <i class="far fa-clock"></i>
+      <span id="updateTimeText">جاري تحديث البيانات...</span>
+    </div>
+    <div class="auto-refresh">
+      <i class="fas fa-sync-alt fa-fw"></i>
+      <span>تحديث كل 60 ثانية</span>
+    </div>
+  </div>
+    <div class="name-front">
+        &lt;/hassan-gomaa&gt;
+        
+    </div>
+  <div class="attribution">
+    <i class="fas fa-chart-line"></i> بيانات مباشرة من أسواق الذهب والعملات | Trend Live & ترند لايف
+  </div>
+</div>
+
+<script>
+  // ===============================
+  // 1. Helper: update UI with fallback & smooth loading
+  // 2. Fetch with timeout and robust error handling
+  // 3. Gold price in USD per ounce → gram → EGP
+  // 4. Rate: USD/EGP from exchangerate-api
+  // ===============================
+
+  const DOM = {
+    usdSpan: document.getElementById('usdValue'),
+    gold24Span: document.getElementById('gold24Value'),
+    gold21Span: document.getElementById('gold21Value'),
+    gold18Span: document.getElementById('gold18Value'),
+    updateTimeSpan: document.getElementById('updateTimeText')
+  };
+
+  // Helper: format number with thousands separators (EGP style)
+  function formatCurrency(value) {
+    if (isNaN(value) || value === null) return '—';
+    // round to nearest integer for gold prices (EGP/gram) but keep decimals for USD maybe
+    // professional look: gold prices in EGP without decimals? usually dealers show integer or one decimal
+    // but we can show rounded integer for clean UI
+    return Math.round(value).toLocaleString('ar-EG');
+  }
+
+  function formatUSD(value) {
+    if (isNaN(value) || value === null) return '—';
+    return value.toFixed(2).toLocaleString('ar-EG');
+  }
+
+  // show shimmer/loading effect by setting placeholder
+  function setLoadingState(isLoading) {
+    if (isLoading) {
+      if (DOM.usdSpan.innerText === '—') return;
+      // we don't want to remove actual data abruptly, but for first load we show --
+      // but for error, keep last data. We'll handle in fetch
+    }
+  }
+
+  let lastSuccessfulData = {
+    usd: null,
+    gold24: null,
+    gold21: null,
+    gold18: null
+  };
+
+  async function fetchGoldPriceWithTimeout() {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000);
+    try {
+      const response = await fetch('https://api.gold-api.com/price/XAU', {
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+      if (!response.ok) throw new Error(`Gold API error ${response.status}`);
+      const data = await response.json();
+      // structure: { price: number, currency: "USD", ... }
+      if (data && typeof data.price === 'number') {
+        return data.price;
+      } else {
+        throw new Error('Invalid gold price format');
+      }
+    } catch (err) {
+      clearTimeout(timeoutId);
+      console.warn('Gold fetch error:', err);
+      return null;
+    }
+  }
+
+  async function fetchUSDEGRWithTimeout() {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000);
+    try {
+      const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD', {
+        signal: controller.signal
+      });
+      clearTimeout(timeoutId);
+      if (!response.ok) throw new Error(`Currency API error ${response.status}`);
+      const data = await response.json();
+      if (data && data.rates && typeof data.rates.EGP === 'number') {
+        return data.rates.EGP;
+      } else {
+        throw new Error('EGP rate missing');
+      }
+    } catch (err) {
+      clearTimeout(timeoutId);
+      console.warn('Currency fetch error:', err);
+      return null;
+    }
+  }
+
+  async function loadData() {
+    // Show subtle loading indicator on timestamp (no full shimmer to avoid flicker)
+    const originalTimeText = DOM.updateTimeSpan.innerText;
+    DOM.updateTimeSpan.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> تحديث...';
+
+    try {
+      // fetch both concurrently
+      const [goldOunceUsd, usdToEgpRate] = await Promise.all([
+        fetchGoldPriceWithTimeout(),
+        fetchUSDEGRWithTimeout()
+      ]);
+
+      // validation
+      if (goldOunceUsd === null || usdToEgpRate === null) {
+        throw new Error('One of the APIs failed to respond');
+      }
+
+      // calculations: 1 troy ounce = 31.1034768 grams (standard)
+      const OUNCE_TO_GRAM = 31.1034768;
+      const gramPriceUsd = goldOunceUsd / OUNCE_TO_GRAM;
+      const gramPriceEgp = gramPriceUsd * usdToEgpRate;
+
+      const gold24PerGram = gramPriceEgp;
+      const gold21PerGram = gold24PerGram * 0.875;   // 21/24 = 0.875
+      const gold18PerGram = gold24PerGram * 0.75;    // 18/24 = 0.75
+
+      // Update USD display
+      DOM.usdSpan.innerText = formatUSD(usdToEgpRate) + ' ج.م';
+      DOM.gold24Span.innerText = formatCurrency(gold24PerGram) + ' ج.م';
+      DOM.gold21Span.innerText = formatCurrency(gold21PerGram) + ' ج.م';
+      DOM.gold18Span.innerText = formatCurrency(gold18PerGram) + ' ج.م';
+
+      // store last successful values
+      lastSuccessfulData = {
+        usd: usdToEgpRate,
+        gold24: gold24PerGram,
+        gold21: gold21PerGram,
+        gold18: gold18PerGram
+      };
+
+      // update timestamp with current local time (Egypt/Cairo)
+      const now = new Date();
+      const formattedTime = now.toLocaleTimeString('ar-EG', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      DOM.updateTimeSpan.innerHTML = `<i class="far fa-calendar-alt"></i> ${formattedTime}`;
+    } catch (error) {
+      console.error('Data aggregation error:', error);
+      // restore last known data if exists, otherwise keep "—"
+      if (lastSuccessfulData.usd !== null) {
+        DOM.usdSpan.innerText = formatUSD(lastSuccessfulData.usd) + ' ج.م';
+        DOM.gold24Span.innerText = formatCurrency(lastSuccessfulData.gold24) + ' ج.م';
+        DOM.gold21Span.innerText = formatCurrency(lastSuccessfulData.gold21) + ' ج.م';
+        DOM.gold18Span.innerText = formatCurrency(lastSuccessfulData.gold18) + ' ج.م';
+        DOM.updateTimeSpan.innerHTML = `<i class="fas fa-exclamation-triangle"></i> آخر بيانات متاحة`;
+      } else {
+        DOM.usdSpan.innerText = '— ج.م';
+        DOM.gold24Span.innerText = '— ج.م';
+        DOM.gold21Span.innerText = '— ج.م';
+        DOM.gold18Span.innerText = '— ج.م';
+        DOM.updateTimeSpan.innerHTML = `<i class="fas fa-plug"></i> فشل الاتصال، إعادة المحاولة...`;
+      }
+      // show user-friendly message but keep UI professional
+      setTimeout(() => {
+        if (!lastSuccessfulData.usd) {
+          DOM.updateTimeSpan.innerHTML = `<i class="fas fa-clock"></i> انتظار التحديث التالي`;
+        }
+      }, 2000);
+    }
+  }
+
+  // function to set initial timestamp style and first fetch
+  async function init() {
+    await loadData();
+    // auto refresh every 60 seconds as required
+    setInterval(() => {
+      loadData();
+    }, 60000);
+  }
+
+  // run the app
+  init();
+
+  // optional: add hover micro-interactions for better UX
+  const cards = document.querySelectorAll('.metric-card');
+  cards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.style.transition = 'all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1)';
+    });
+  });
+</script>
+</body>
+</html>
